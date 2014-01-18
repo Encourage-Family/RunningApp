@@ -1004,7 +1004,7 @@ module.exports = {
                 polling();
             }
             else {
-                var isPolling = prompt("usePolling", "gap_callbackServer:");
+                var isPolling = "true" //dns prompt("usePolling", "gap_callbackServer:");
                 cordova.UsePolling = isPolling;
                 if (isPolling == "true") {
                     cordova.UsePolling = true;
@@ -1080,7 +1080,7 @@ module.exports = {
         // Let native code know we are all done on the JS side.
         // Native code will then un-hide the WebView.
         channel.join(function() {
-            prompt("", "gap_init:");
+            //dns prompt("", "gap_init:");
         }, [channel.onCordovaReady]);
     },
     objects: {
@@ -3575,10 +3575,10 @@ var port = null,
       };
 
       if (port === null) {
-          port = prompt("getPort", "gap_callbackServer:");
+         //dns port = prompt("getPort", "gap_callbackServer:");
       }
       if (token === null) {
-          token = prompt("getToken", "gap_callbackServer:");
+          //dns token = prompt("getToken", "gap_callbackServer:");
       }
       xmlhttp.open("GET", "http://127.0.0.1:"+port+"/"+token , true);
       xmlhttp.send();
@@ -3757,7 +3757,7 @@ var cordova = require('cordova'),
           return;
       }
 
-      var msg = prompt("", "gap_poll:");
+      var msg = "gap_pol"; // dns prompt("", "gap_poll:");
       if (msg) {
           setTimeout(function() {
               try {
